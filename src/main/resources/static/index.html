@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Registro <strong>Reto 1</strong></title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="box-sign-in">
+        <h1>Inicio de Sesión Reto 1</h1>
+        <div class="container">
+            <div class="box-form-sign">
+                <div class="box-form">
+                    <h2>Iniciar Sesión</h2>
+                    <form id="form" class="form">
+                        <div class="input-group">
+                            <span><i class="fas fa-user" aria-hidden="true"></i></span>
+                            <input type="email" name="email" id="email" placeholder="Correo Eléctronico">
+
+                        </div>
+
+                        <div class="input-group">
+                            <span><i class="fas fa-key" aria-hidden="true"></i></span>
+                            <input type="password" name="password" id="password" placeholder="Contraseña">
+                        </div>
+
+                        <div id="msgAlert"></div>
+
+                        <button class="btn btn-primary btn-block" type="submit" id="submitButton">Ingresar</button>
+
+                        <div class="form-row">
+                            <span>No tienes cuenta,<a href="registrar.html" class="new-register"> <strong>Regístrate Aquí</strong></a></span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/all.min.js"></script>
+    <script src="js/functions.js"></script>
+</body>
+
+</html>
