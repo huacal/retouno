@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario de Registro <strong>Reto 1</strong></title>
+    <title>Catálogo Willy Wonka</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,39 +15,70 @@
 
 <body>
     <div class="box-sign-in">
-        <h1>Formulario de Registro Reto 1</h1>
+        <h1>Willy Wonka</h1>
         <div class="container">
             <div class="box-form-sign">
                 <div class="box-form">
-                    <h2>Crea una Cuenta</h2>
-                    <form>
-                        <div class="input-group">
+                    <h2>Registrarse</h2>
+                    <form id="formRegistrer" class="form-registrer">
+
+                        <div class="input-group" id="inputGroup-names">
                             <span><i class="fas fa-user" aria-hidden="true"></i></span>
-                            <input type="text" name="name" id="name" placeholder="Nombres" required=" ">
+                            <input type="text" name="names" id="names" placeholder="Nombres">
+                            <p class="text-alert-input">El nombre tiene que contener de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo.</p>
+                            <!-- <i class="fas fa-check-circle d-none"></i> -->
                         </div>
 
-                        <div class="input-group">
-                            <span><i class="fas fa-user" aria-hidden="true"></i></span>
-                            <input type="email" name="email" id="email" placeholder="Correo Eléctronico" required>
+                        <div class="input-group" id="inputGroup-email">
+                            <span><i class="fas fa-at"></i></span>
+                            <input type="email" name="email" id="email" placeholder="Correo Eléctronico">
+                            <!-- <i class="fas fa-check-circle d-none" id="faCheckCircle"></i> -->
+                            <p class="text-alert-input">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
                         </div>
 
-                        <div class="input-group">
+                        <div class="input-group" id="inputGroup-password">
                             <span><i class="fas fa-key" aria-hidden="true"></i></span>
-                            <input type="password" name="password" id="password" placeholder="Contraseña" required=" ">
+                            <input type="password" name="password" id="password" placeholder="Contraseña">
+                            <!-- <i class="fas fa-check-circle d-none"></i> -->
+                            <p class="text-alert-input">La contraseña debe contener al menos de 4 a 12 digitos. </p>
                         </div>
 
-                        <button class="btn btn-primary btn-block" type="submit" onclick="saveUser()">Crear Cuenta</button>
+                        <div class="input-group" id="inputGroup-passwordConf">
+                            <span><i class="fas fa-key" aria-hidden="true"></i></span>
+                            <input type="password" name="passwordConf" id="passwordConf" placeholder="Confirmar Contraseña">
+                            <!-- <i class="fas fa-check-circle d-none"></i> -->
+                            <p class="text-alert-input">Las contraseñas no coinciden</p>
+                        </div>
 
-                        <div class="form-row">
-                            <span><a href="index.html" class="new-register"> <strong>Iniciar Sesión</strong></a></span>
+                        <div class="msgAlert" id="msgAlert"></div>
+
+                        <button class="btn btn-primary btn-block" type="submit" id="submitRegister">Registrarse</button>
+
+                        <div class="form-row ">
+                            <span><a href="index.html " class="new-register "> <strong>Iniciar Sesión</strong></a></span>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-    <script src="js/all.min.js"></script>
-    <script src="js/functions.js"></script>
+    <script src="js/jquery-3.6.0.min.js "></script>
+    <script src="js/all.min.js "></script>
+    <script src="js/functions.js "></script>
+    <script>
+        formRegister.addEventListener('submit', (e) => {
+            e.preventDefault();
+            if (fields.names && fields.email && fields.password) {
+                saveUser();
+                formRegister.reset();
+            } else {
+                msgAlert.innerHTML = '<span class="red"><i class="fas fa-window-close"></i>  Rellene todo los campos*</span>';
+                setTimeout(() => {
+                    msgAlert.innerHTML = " "
+                }, 4000);
+            }
+        })
+    </script>
 </body>
 
 </html>
